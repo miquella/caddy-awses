@@ -1,17 +1,17 @@
 caddy-awses
 ===========
 
-[Caddy][Caddy] plugin for signing and proxying requests to [AWS ES][AWS ES].
+[Caddy][Caddy] plugin for signing and proxying requests to
+[AWS Elasticsearch][AWS Elasticsearch] (AWS ES).
 
-Configuring an AWS ES domain to allow access can be a tricky endeavor. Signing
-each request before it is sent to the domain prohibits using standard tools you
-might otherwise use (such as `curl` or a browser). And it's not always possible
-to whitelist an IP to allow unsigned access.
+Configuring access to an AWS ES domain can be tricky. The access policy of an
+AWS ES domain is based on a principal (which necessitates a signed request) or
+an IP address whitelist. Whitelisting IP addresses often isn't a viable option
+and standard tools (such as `curl` or a browser) can't properly sign requests.
 
-This plugin helps to address that by using AWS credentials to sign each request
-and then proxy the request on to the AWS ES domain. This allows you to listen
-on a more secure interface (e.g. localhost) and use standard tools to query and
-otherwise make requests against a domain.
+This is exactly the problem this plugin aims to address. Standard tools can
+make unauthenticated requests to the Caddy server which are then signed and
+proxied to the AWS ES service.
 
 Syntax
 ------
@@ -112,5 +112,5 @@ awses /other-account/ {
 }
 ```
 
-[AWS ES]: https://aws.amazon.com/documentation/elasticsearch-service/
+[AWS Elasticsearch]: https://aws.amazon.com/documentation/elasticsearch-service/
 [Caddy]: https://github.com/mholt/caddy
