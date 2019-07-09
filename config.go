@@ -6,7 +6,7 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/mholt/caddy"
+	"github.com/caddyserver/caddy"
 )
 
 var (

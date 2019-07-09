@@ -189,5 +189,5 @@ This will leave Kibana accessible at `/_plugin/kibana/`.
 
 
 [AWS Elasticsearch]: https://aws.amazon.com/documentation/elasticsearch-service/
-[Caddy]: https://github.com/mholt/caddy
+[Caddy]: https://github.com/caddyserver/caddy
 [Caddyfile]: https://caddyserver.com/tutorial/caddyfile
